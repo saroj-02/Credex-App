@@ -1,6 +1,12 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
+import HowItWorksModal from '@/components/HowItWorksModal';
 
 export default function Home() {
+  const [isHowItWorksOpen, setIsHowItWorksOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#09090b] text-[#fafafa] font-sans selection:bg-blue-500/30">
       {/* Header */}
@@ -54,12 +60,12 @@ export default function Home() {
               >
                 Run Free Infrastructure Audit
               </Link>
-              <Link 
-                href="#how-it-works" 
-                className="w-full sm:w-auto px-8 py-4 bg-[#18181b] hover:bg-[#27272a] border border-[#27272a] text-white font-medium rounded-lg text-lg transition-colors"
+              <button 
+                onClick={() => setIsHowItWorksOpen(true)}
+                className="w-full sm:w-auto px-8 py-4 bg-[#18181b] hover:bg-[#27272a] border border-[#27272a] text-white font-medium rounded-lg text-lg transition-colors cursor-pointer"
               >
                 How it works
-              </Link>
+              </button>
             </div>
           </div>
         </section>
@@ -67,38 +73,36 @@ export default function Home() {
         {/* Social Proof */}
         <section className="py-20 bg-[#09090b] border-y border-[#27272a]">
           <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-10 text-left">Trusted by top AI startups</h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Trusted by top AI startups</h2>
-                <div className="glass p-8 rounded-2xl relative">
-                  <div className="absolute -top-4 -left-4 text-6xl text-blue-500/30">"</div>
-                  <p className="text-xl text-gray-300 mb-6 relative z-10 leading-relaxed">
-                    Credex ran their audit in 2 minutes. By Friday, they had cut our Anthropic API bill by 40% and secured $100k in AWS credits we didn't know we qualified for. Absolute no-brainer.
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full" />
-                    <div>
-                      <p className="font-semibold">David Chen</p>
-                      <p className="text-gray-400 text-sm">Founder at VectorML (Backed by YC & Sequoia)</p>
-                    </div>
+              <div className="glass p-8 rounded-2xl relative">
+                <div className="absolute -top-4 -left-4 text-6xl text-blue-500/30">"</div>
+                <p className="text-xl text-gray-300 mb-6 relative z-10 leading-relaxed">
+                  Credex ran their audit in 2 minutes. By Friday, they had cut our Anthropic API bill by 40% and secured $100k in AWS credits we didn't know we qualified for. Absolute no-brainer.
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full" />
+                  <div>
+                    <p className="font-semibold">David Chen</p>
+                    <p className="text-gray-400 text-sm">Founder at VectorML (Backed by YC & Sequoia)</p>
                   </div>
                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4">
-                <div className="glass p-6 rounded-xl text-center">
+                <div className="glass p-6 rounded-xl text-center flex flex-col justify-center min-h-[140px]">
                   <p className="text-4xl font-bold text-blue-400 mb-2">$4.2M</p>
                   <p className="text-sm text-gray-400">Credits Secured</p>
                 </div>
-                <div className="glass p-6 rounded-xl text-center">
+                <div className="glass p-6 rounded-xl text-center flex flex-col justify-center min-h-[140px]">
                   <p className="text-4xl font-bold text-violet-400 mb-2">35%</p>
                   <p className="text-sm text-gray-400">Avg. Bill Reduction</p>
                 </div>
-                <div className="glass p-6 rounded-xl text-center">
+                <div className="glass p-6 rounded-xl text-center flex flex-col justify-center min-h-[140px]">
                   <p className="text-4xl font-bold text-emerald-400 mb-2">&lt;5 min</p>
                   <p className="text-sm text-gray-400">Audit Time</p>
                 </div>
-                <div className="glass p-6 rounded-xl text-center">
+                <div className="glass p-6 rounded-xl text-center flex flex-col justify-center min-h-[140px]">
                   <p className="text-4xl font-bold text-amber-400 mb-2">0</p>
                   <p className="text-sm text-gray-400">Engineering Hours</p>
                 </div>
@@ -130,6 +134,11 @@ export default function Home() {
       <footer className="border-t border-[#27272a] py-8 text-center text-gray-500 text-sm">
         <p>© 2026 Credex Inc. All rights reserved.</p>
       </footer>
+
+      <HowItWorksModal 
+        isOpen={isHowItWorksOpen} 
+        onClose={() => setIsHowItWorksOpen(false)} 
+      />
     </div>
   );
 }
