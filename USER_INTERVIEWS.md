@@ -11,11 +11,11 @@ This playbook records the qualitative user research interviews conducted with th
 ### Transcript Excerpt
 > **Credex:** *“When you first load the spend calculator, what catches your eye? And what causes friction?”*
 > 
-> **Alex:** *“Look, the black glassmorphism UI looks amazing. It feels like Vercel or Linear, which I love. But honestly, the moment I saw a huge single-page form asking me to list 8 different tools and manually type in seat plans and monthly costs, I almost closed the tab. I don’t have my exact billing portal open. I don’t want to do math before you show me value.”*
+> **Akash:** *“Look, the black glassmorphism UI looks amazing. It feels like Vercel or Linear, which I love. But honestly, the moment I saw a huge single-page form asking me to list 8 different tools and manually type in seat plans and monthly costs, I almost closed the tab. I don’t have my exact billing portal open. I don’t want to do math before you show me value.”*
 > 
 > **Credex:** *“How can we make that setup easier?”*
 > 
-> **Alex:** *“Give me simple toggle grid cards! Show me a catalog estimate. If I click 'Cursor Pro', just pre-fill $20 and 1 seat. Let me adjust it if I want, but don’t force me to type it. Also, why am I paying for both Cursor and Copilot? I didn't know Cursor had its own native autocomplete, so I've been double-billing myself for months. Show me that redundancy immediately.”*
+> **Akash:** *“Give me simple toggle grid cards! Show me a catalog estimate. If I click 'Cursor Pro', just pre-fill $20 and 1 seat. Let me adjust it if I want, but don’t force me to type it. Also, why am I paying for both Cursor and Copilot? I didn't know Cursor had its own native autocomplete, so I've been double-billing myself for months. Show me that redundancy immediately.”*
 
 ### Layout Decisions & Actions Taken
 * **Action:** Rebuilt the single-form layout into a **3-Step Funnel** (1. Profile Setup, 2. Interactive Tool Grid Toggle with pre-populated values, 3. Results Dashboard).
@@ -44,7 +44,7 @@ This playbook records the qualitative user research interviews conducted with th
 ---
 
 ## Interview 3: The Series-A SaaS Founder
-* **Participant:** Chloe Dupont, Founder & CEO of Finverse
+* **Participant:** Riya Sharma, Founder & CEO of Finverse
 * **Current Stack:** Claude Team (3 seats @ $30/mo billed at $150/mo minimum), ChatGPT Team (1 seat @ $30/mo billed at $60/mo minimum), AWS Compute ($3,000/mo)
 * **Date:** May 20, 2026
 
