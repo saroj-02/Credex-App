@@ -49,7 +49,7 @@ export default function BookConsultation() {
             <div className="glass p-8 rounded-2xl border border-[#27272a] animate-in fade-in slide-in-from-bottom-4 duration-500">
               <h1 className="text-3xl font-bold mb-2">Book your Consultation</h1>
               <p className="text-gray-400 mb-8">
-                Lock in your potential savings. We'll walk you through exactly how to optimize your compute and claim your startup credits.
+                Lock in your potential savings. We&apos;ll walk you through exactly how to optimize your compute and claim your startup credits.
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-5">

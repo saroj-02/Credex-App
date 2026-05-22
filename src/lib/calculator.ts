@@ -91,7 +91,6 @@ export function runSpendAudit(
   
   // 1. Redundancy check: Cursor + GitHub Copilot
   const hasCursor = activeToolNames.has('Cursor');
-  const hasCopilot = activeToolNames.has('GitHub Copilot');
   const hasWindsurf = activeToolNames.has('Windsurf');
 
   for (const tool of tools) {

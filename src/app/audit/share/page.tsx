@@ -9,13 +9,14 @@ function SharedAuditDashboard() {
   const searchParams = useSearchParams();
   const [report, setReport] = useState<AuditReport | null>(null);
   const [teamSize, setTeamSize] = useState(1);
-  const [useCase, setUseCase] = useState('coding');
   const [decodeError, setDecodeError] = useState(false);
 
   useEffect(() => {
     const dataParam = searchParams.get('data');
     if (!dataParam) {
-      setDecodeError(true);
+      setTimeout(() => {
+        setDecodeError(true);
+      }, 0);
       return;
     }
 
@@ -27,7 +28,7 @@ function SharedAuditDashboard() {
       const { tools, teamSize: parsedTeamSize, primaryUseCase } = parsed;
       
       if (tools && Array.isArray(tools)) {
-        const formattedTools: ToolInput[] = tools.map((t: any) => ({
+        const formattedTools: ToolInput[] = tools.map((t: ToolInput) => ({
           name: t.name,
           plan: t.plan,
           monthlySpend: t.monthlySpend,
@@ -40,15 +41,20 @@ function SharedAuditDashboard() {
           primaryUseCase || 'coding'
         );
         
-        setReport(compiledReport);
-        setTeamSize(Number(parsedTeamSize) || 1);
-        setUseCase(primaryUseCase || 'coding');
+        setTimeout(() => {
+          setReport(compiledReport);
+          setTeamSize(Number(parsedTeamSize) || 1);
+        }, 0);
       } else {
-        setDecodeError(true);
+        setTimeout(() => {
+          setDecodeError(true);
+        }, 0);
       }
     } catch (e) {
       console.error('Failed to parse share link data payload', e);
-      setDecodeError(true);
+      setTimeout(() => {
+        setDecodeError(true);
+      }, 0);
     }
   }, [searchParams]);
 

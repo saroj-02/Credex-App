@@ -76,9 +76,9 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-10 text-left">Trusted by top AI startups</h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="glass p-8 rounded-2xl relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-blue-500/30">"</div>
+                <div className="absolute -top-4 -left-4 text-6xl text-blue-500/30">&ldquo;</div>
                 <p className="text-xl text-gray-300 mb-6 relative z-10 leading-relaxed">
-                  Credex ran their audit in 2 minutes. By Friday, they had cut our Anthropic API bill by 40% and secured $100k in AWS credits we didn't know we qualified for. Absolute no-brainer.
+                  Credex ran their audit in 2 minutes. By Friday, they had cut our Anthropic API bill by 40% and secured $100k in AWS credits we didn&apos;t know we qualified for. Absolute no-brainer.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full" />

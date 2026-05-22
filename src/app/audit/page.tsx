@@ -30,13 +30,17 @@ export default function AuditFlow() {
       const savedProfile = localStorage.getItem('credex_profile');
       if (savedProfile) {
         const { size, useCase } = JSON.parse(savedProfile);
-        setTeamSize(size || '1');
-        setPrimaryUseCase(useCase || 'coding');
+        setTimeout(() => {
+          setTeamSize(size || '1');
+          setPrimaryUseCase(useCase || 'coding');
+        }, 0);
       }
 
       const savedStack = localStorage.getItem('credex_stack');
       if (savedStack) {
-        setSelectedTools(JSON.parse(savedStack));
+        setTimeout(() => {
+          setSelectedTools(JSON.parse(savedStack));
+        }, 0);
       }
     } catch (e) {
       console.error('Failed to load cache from localStorage', e);
@@ -246,7 +250,7 @@ export default function AuditFlow() {
           {/* STEP 1: Company Profile Info */}
           {step === 1 && (
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 glass p-8 md:p-10 rounded-2xl border border-[#27272a]">
-              <h1 className="text-3xl font-bold tracking-tight mb-2">Let's audit your AI Spend</h1>
+              <h1 className="text-3xl font-bold tracking-tight mb-2">Let&apos;s audit your AI Spend</h1>
               <p className="text-gray-400 mb-8">First, give us brief details about your company stage and primary usage.</p>
               
               <div className="space-y-6">
@@ -460,7 +464,7 @@ export default function AuditFlow() {
                       <span className="animate-pulse">✨</span> AI-Generated Spend Strategy
                     </h3>
                     <p className="text-xs text-gray-400 leading-relaxed font-sans relative z-10 italic">
-                      "{aiSummary}"
+                      &ldquo;{aiSummary}&rdquo;
                     </p>
                   </div>
 
@@ -522,7 +526,7 @@ export default function AuditFlow() {
                         <div className="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">✓</div>
                         <h4 className="font-bold text-lg text-white mb-2">Audit Report Secured!</h4>
                         <p className="text-xs text-gray-400 leading-relaxed max-w-md mx-auto">
-                          We've compiled your data and simulated storing this lead to the CRM database backend. Check your simulated terminal logs for transactional email confirmation details!
+                          We&apos;ve compiled your data and simulated storing this lead to the CRM database backend. Check your simulated terminal logs for transactional email confirmation details!
                         </p>
                       </div>
                     ) : (
